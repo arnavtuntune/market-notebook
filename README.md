@@ -1,17 +1,24 @@
-# Market Notebook
+# market-notebook
 
-My paper portfolio of Indian stocks, a monthly performance report against the Nifty 50, and my own research notes. I started this in Class 11 to learn investing by actually doing it. No real money is involved.
+Paper portfolio of NSE stocks (₹2 lakh, no real money), started 16 Oct 2026.
 
-## What's here
+Every position has a written thesis in `holdings.csv`. Once a month `tracker.py` pulls prices, compares returns with the Nifty 50 and writes a report to `reports/`, and I add what I got right or wrong. Longer notes on individual companies go in `notes/`.
 
-| Folder / file | What it is |
+Bad picks stay in. The point is to see how my reasoning holds up.
+
+## Current holdings
+
+| Stock | Sector |
 |---|---|
-| `holdings.csv` | My paper portfolio: stock, quantity, buy date, and **why I bought it** |
-| `tracker.py` | Pulls live prices, calculates my returns, compares them with the Nifty 50 |
-| `reports/` | One report per month, with what I learned |
-| `notes/` | My one-page stock and sector notes |
+| HDFC Bank | Banking |
+| Bharti Airtel | Telecom |
+| Larsen & Toubro | Infrastructure |
+| Titan | Consumer / jewellery |
+| Sun Pharma | Pharma |
+| TCS | IT services |
+| Maruti Suzuki | Autos |
 
-## Run it
+## Running it
 
 ```bash
 python -m venv .venv
@@ -20,14 +27,4 @@ pip install -r requirements.txt
 python tracker.py
 ```
 
-## Rules I follow
-
-1. Every stock needs a written reason before I "buy" it.
-2. I don't delete bad picks. Being wrong and explaining why is part of learning.
-3. One report and one note every month.
-
-## Monthly routine
-
-1. The tracker runs automatically every 4 weeks (Windows Task Scheduler) and writes `reports/YYYY-MM.md`
-2. I write the "What I learned" section myself
-3. `.\publish.ps1 "short message"` commits and pushes to GitHub
+`publish.ps1` commits and pushes the month's report and notes.
