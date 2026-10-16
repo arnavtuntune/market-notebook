@@ -25,3 +25,9 @@ python tracker.py
 1. Every stock needs a written reason before I "buy" it.
 2. I don't delete bad picks. Being wrong and explaining why is part of learning.
 3. One report and one note every month.
+
+## Monthly routine
+
+1. The tracker runs automatically every 4 weeks (Windows Task Scheduler) and writes `reports/YYYY-MM.md`
+2. I write the "What I learned" section myself
+3. `.\publish.ps1 "short message"` commits and pushes to GitHub
